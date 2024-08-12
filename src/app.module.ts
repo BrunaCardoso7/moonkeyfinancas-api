@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserModule } from './user/user.module';
-import { User } from './user/entities/user.entity';
+import { UsersModule } from './users/users.module';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { User } from './users/entities/user.entity';
 
 @Module({
   imports: [
@@ -13,9 +13,12 @@ import { User } from './user/entities/user.entity';
       entities: [User],
       synchronize: true,
     }),
-    UserModule
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: true,
+    }),
+    UsersModule
   ],
-  controllers: [AppController],
-  providers: [AppService],
+
 })
 export class AppModule {}
