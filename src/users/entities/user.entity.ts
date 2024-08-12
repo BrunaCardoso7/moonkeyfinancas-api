@@ -25,11 +25,11 @@ export class User {
   @Column()
   password: string;
 
-  @Field()
-  @CreateDateColumn()
-  createdAt: Date;
+  // @Field()
+  // @CreateDateColumn()
+  // createdAt: Date;
 
-  @Field()
-  @CreateDateColumn()
-  updateddAt: Date;
+  // @Field()
+  // @CreateDateColumn()
+  // updateddAt: Date;
 }

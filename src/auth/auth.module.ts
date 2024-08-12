@@ -9,14 +9,11 @@ import { UsersService } from 'src/users/users.service';
 @Module({
   imports: [
     UsersModule,
-    JwtModule.registerAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: async (configService: ConfigService) => ({
-        secret: configService.get<string>('secret_key_jwt'),
-        signOptions: { expiresIn: '1d' },
-      }),
+    JwtModule.register({
+      secret: process.env.JWT_SECRET || 'defaultSecret', 
+      signOptions: { expiresIn: '60s' },
     }),
+
   ],
   providers: [AuthResolver, AuthService],
 })
