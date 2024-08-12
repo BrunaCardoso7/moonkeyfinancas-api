@@ -4,9 +4,14 @@ import { UsersModule } from './users/users.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { User } from './users/entities/user.entity';
+import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       url: 'postgresql://postgres:ytoMHyJnWSBlJIxTHQkpnzsrGWNDACBm@monorail.proxy.rlwy.net:55780/railway',
@@ -17,7 +22,8 @@ import { User } from './users/entities/user.entity';
       driver: ApolloDriver,
       autoSchemaFile: true,
     }),
-    UsersModule
+    UsersModule,
+    AuthModule
   ],
 
 })

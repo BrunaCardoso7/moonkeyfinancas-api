@@ -1,6 +1,5 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { UUID } from 'typeorm/driver/mongodb/bson.typings';
 
 
 @ObjectType()
