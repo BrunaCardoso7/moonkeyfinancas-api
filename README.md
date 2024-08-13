@@ -26,14 +26,18 @@ Api RestFull desenvolvida com Nest.js e GraphQl, tem como proposta gestão de ve
 
 ## Funcionalidades
 
-- [ ] Gerenciamento de usuário
+- [X] Gerenciamento de usuário
 
   - [X] Crud com inserção, atualização, listagem e exclusão de usuários
   - [X] Implementação da autenticação de usuários com JWT
-  - [ ] Aplicar Guard de autenticação em rotas protegidas
+  - [X] Aplicar Guard de autenticação em rotas protegidas
 
-- [ ] Gereciamento de produtos
+- [X] Gereciamento de produtos
+  - [X] Crud com inserção, atualização, listagem e exclusão de Produtos
+- [ ] Implementar module para uploud de arquivos
 - [ ] Gereciamento de vendas de produtos
+
+...
 
 
 
