@@ -1,11 +1,16 @@
+
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+  <h1 align="center">Moonkey Finanças API</h1>
+  <p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="./public/graphql.png" width="800" alt="Nest Logo" /></a>
+  </p>
 </p>
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+  <!-- <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
     <p align="center">
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
@@ -18,45 +23,36 @@
   <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
     <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
+</p> -->
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+
+
+
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Api RestFull desenvolvida com Nest.js e GraphQl, tem como proposta gestão de vendas e pedidos focado no ramo comercial. Com ela, posso registrar, atualizar, deletar e consultar pedidos e vendas.
 
-## Installation
+## Tecnologias
 
-```bash
-$ npm install
-```
+ - <b>Nest js</b>
+ - <b>TypeORM</b>
+ - <b>Typescript</b>
+ - <b>GraphQL</b>
+ - <b>JWT</b>
 
-## Running the app
+## Funcionalidades
 
-```bash
-# development
-$ npm run start
+- [ ] Gerenciamento de usuário
 
-# watch mode
-$ npm run start:dev
+  - [X] Crud com inserção, atualização, listagem e exclusão de usuários
+  - [X] Implementação da autenticação de usuários com JWT
+  - [ ] Aplicar Guard de autenticação em rotas protegidas
 
-# production mode
-$ npm run start:prod
-```
+- [ ] Gereciamento de produtos
+- [ ] Gereciamento de vendas de produtos
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
 
 ## Support
 
@@ -64,10 +60,6 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Author - [Bruna Cardoso](https://kamilmysliwiec.com)
+- Documentação - [https://nestjs.com](https://nestjs.com/)
+- LinkedIn - [@nestframework](https://twitter.com/nestframework)
