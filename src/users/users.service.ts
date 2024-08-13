@@ -29,8 +29,17 @@ export class UsersService {
     return this.userRepository.findOne({where: { email }});
   }
 
-  update(id: string, updateUserInput: UpdateUserInput) {
-    return this.userRepository.update(id, updateUserInput);
+  async update(id: string, updateUserInput: UpdateUserInput) {
+    const user = await this.userRepository.preload({
+      id,
+      ...updateUserInput,
+    });
+
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    return this.userRepository.save(user);;
   }
 
   remove(id: string) {
