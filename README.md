@@ -3,7 +3,7 @@
 <p align="center">
   <h1 align="center">Moonkey Finanças API</h1>
   <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="./public/graphql.png" width="800" alt="Nest Logo" /></a>
+  <a href="" target="blank"><img src="./public/1.png" width="800" alt="Nest Logo" /></a>
   </p>
 </p>
 
