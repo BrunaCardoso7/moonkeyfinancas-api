@@ -8,12 +8,15 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { ProductsModule } from './products/products.module';
 import { Product } from './products/entities/product.entity';
+import { VendasModule } from './vendas/vendas.module';
+import { Venda } from './vendas/entities/venda.entity';
 
 @Module({
   imports: [
     ProductsModule,
     AuthModule, 
-    UsersModule, 
+    UsersModule,
+    VendasModule, 
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
@@ -24,11 +27,10 @@ import { Product } from './products/entities/product.entity';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: 'postgresql://postgres:uVIKyuyQKWcdsWwbOlBKzKMPqqqoKCXY@roundhouse.proxy.rlwy.net:19019/railway',
-      entities: [User, Product],
+      url: 'postgresql://postgres:RTdiOUKoEEgzrGITYRgTKNzXmOlotrEZ@roundhouse.proxy.rlwy.net:53884/railway',
+      entities: [User, Product, Venda],
       synchronize: true,
     }),
-
   ],
 
 })
