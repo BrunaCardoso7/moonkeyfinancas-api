@@ -34,8 +34,13 @@ Api RestFull desenvolvida com Nest.js e GraphQl, tem como proposta gestão de ve
 
 - [X] Gereciamento de produtos
   - [X] Crud com inserção, atualização, listagem e exclusão de Produtos
+  
+- [X] Gereciamento de Vendas
+  - [X] Crud com inserção, atualização, listagem e exclusão de vendas
+    
 - [ ] Implementar module para uploud de arquivos
-- [ ] Gereciamento de vendas de produtos
+
+- [ ] Correção de Bug do Guard de cheacagem de autenticação de usuários
 
 ...
 
