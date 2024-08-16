@@ -42,6 +42,8 @@ Api RestFull desenvolvida com Nest.js e GraphQl, tem como proposta gestão de ve
 
 - [ ] Correção de Bug do Guard de cheacagem de autenticação de usuários
 
+- [ ] Tratamento de exception
+
 ...
 
 
