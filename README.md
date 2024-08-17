@@ -14,7 +14,7 @@
 
 ## Description
 
- API GraphQl  desenvolvida com Nest.js, tem como proposta gestão de vendas e pedidos focado no ramo comercial. Com ela, posso registrar, atualizar, deletar e consultar pedidos e vendas.
+Api RestFull desenvolvida com Nest.js e GraphQl, tem como proposta gestão de vendas e pedidos focado no ramo comercial. Com ela, posso registrar, atualizar, deletar e consultar pedidos e vendas.
 
 ## Tecnologias
 
@@ -44,8 +44,9 @@
 
 - [ ] Implementar module para uploud de arquivos
 
+- [ ] Implementar cacheamento de dados nos modules
 
-- [ ] Tratamento de exception
+- [ ] Tratamento de erros
 
 ...
 
