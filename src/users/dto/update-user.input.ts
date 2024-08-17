@@ -17,4 +17,7 @@ export class UpdateUserInput extends PartialType(CreateUserInput) {
 
   @Field(() => String, { nullable: true })
   password?: string;
+
+  @Field({nullable: true})
+  imagemProfile?: string;
 }

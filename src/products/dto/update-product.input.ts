@@ -15,5 +15,6 @@ export class UpdateProductInput extends PartialType(CreateProductInput) {
   quantidade?: number;
   @Field(() => Float, { nullable: true })
   valor?: number;
+  @Field({nullable: true})
+  imagemProfile?: string;
 }
-  

@@ -29,6 +29,10 @@ export class Product {
   @Column()
   valor: number
 
+  @Field({nullable: true})
+  @Column({nullable: true})
+  imagemProduct?: string;
+
   @Field(()=> [Venda])
   @ManyToMany(()=> Venda, (venda) => venda.products)
   vendas: Venda[]

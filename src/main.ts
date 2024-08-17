@@ -8,6 +8,7 @@ async function bootstrap() {
     origin: 'https://studio.apollographql.com',
     credentials: true,
   })
+
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(3000);
 }

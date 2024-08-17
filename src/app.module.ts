@@ -10,6 +10,8 @@ import { ProductsModule } from './products/products.module';
 import { Product } from './products/entities/product.entity';
 import { VendasModule } from './vendas/vendas.module';
 import { Venda } from './vendas/entities/venda.entity';
+import { UploudsModule } from './uplouds/uplouds.module';
+
 
 @Module({
   imports: [
@@ -27,10 +29,11 @@ import { Venda } from './vendas/entities/venda.entity';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: 'postgresql://postgres:RTdiOUKoEEgzrGITYRgTKNzXmOlotrEZ@roundhouse.proxy.rlwy.net:53884/railway',
+      url: 'postgresql://postgres:cqWeSoRzMJTQArjilzvZguRnCTNphBCY@junction.proxy.rlwy.net:19765/railway',
       entities: [User, Product, Venda],
       synchronize: true,
     }),
+    UploudsModule,
   ],
 
 })

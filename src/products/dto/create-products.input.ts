@@ -13,4 +13,6 @@ export class CreateProductInput {
     quantidade: number;
     @Field(() => Float)
     valor: number;
+    @Field({nullable: true})
+    imagemProfile?: string;
 }

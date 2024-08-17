@@ -25,9 +25,10 @@ export class User {
   @Column()
   password: string;
 
-  // @Field()
-  // @CreateDateColumn()
-  // createdAt: Date;
+  
+  @Field({nullable: true})
+  @Column({nullable: true})
+  imagemProfile?: string;
 
   // @Field()
   // @CreateDateColumn()
