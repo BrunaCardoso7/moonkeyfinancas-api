@@ -42,7 +42,8 @@ Api RestFull desenvolvida com Nest.js e GraphQl, tem como proposta gestão de ve
   - [x] implementação do AuthGuard em todos os módulos que necesitam de atenticação para liberação de acesso
 
 
-- [ ] Implementar module para uploud de arquivos
+- [x] Implementar module para uploud de arquivos
+  - [ ] testar a rota de uplouds no cliente 
 
 - [ ] Implementar cacheamento de dados nos modules
 
