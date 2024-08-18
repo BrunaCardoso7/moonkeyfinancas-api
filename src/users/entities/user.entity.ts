@@ -1,12 +1,12 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { ObjectType, Field } from '@nestjs/graphql';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 
 @ObjectType()
 @Entity({name: 'users'})
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  @Field(() => String)
+  @Field()
   id: string;
 
   @Field()
@@ -29,8 +29,4 @@ export class User {
   @Field({nullable: true})
   @Column({nullable: true})
   imagemProfile?: string;
-
-  // @Field()
-  // @CreateDateColumn()
-  // updateddAt: Date;
 }

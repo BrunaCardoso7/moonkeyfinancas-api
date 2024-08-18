@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { UploudsService } from './uplouds.service';
+import { UploadsService } from './uplouds.service';
 import { UploudsController } from './uplouds.controller';
 
 @Module({
-  providers: [UploudsService],
+  providers: [UploadsService],
   controllers: [UploudsController],
 })
 export class UploudsModule {}

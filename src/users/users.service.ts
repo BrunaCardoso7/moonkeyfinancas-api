@@ -13,20 +13,20 @@ export class UsersService {
     private readonly userRepository: Repository<User>
   ) {}
 
-  create(createUserInput: CreateUserInput) {
-    return this.userRepository.save(createUserInput);
+  async create(createUserInput: CreateUserInput) {
+    return await this.userRepository.save(createUserInput);
   }
 
-  findAll() {
-    return this.userRepository.find();
+  async findAll() {
+    return await this.userRepository.find();
   }
 
-  findOne(id: string) {
-    return this.userRepository.findOne({where: { id }});
+  async findOne(id: string) {
+    return await this.userRepository.findOne({where: { id }});
   }
 
-  findOneByEmail(email: string) {
-    return this.userRepository.findOne({where: { email }});
+  async findOneByEmail(email: string) {
+    return await this.userRepository.findOne({where: { email }});
   }
 
   async update(id: string, updateUserInput: UpdateUserInput) {
@@ -36,10 +36,10 @@ export class UsersService {
     });
 
     if (!user) {
-      throw new Error('User not found');
+      throw new Error('Usuário não encontrado');
     }
 
-    return this.userRepository.save(user);;
+    return await this.userRepository.save(user);;
   }
 
   remove(id: string) {
