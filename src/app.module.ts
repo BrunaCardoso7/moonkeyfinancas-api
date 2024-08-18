@@ -13,6 +13,8 @@ import { Venda } from './vendas/entities/venda.entity';
 import { UploudsModule } from './uplouds/uplouds.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import * as path from 'path';
+import { AuthResolver } from './auth/auth.resolver';
+import { AuthService } from './auth/auth.service';
 
 @Module({
   imports: [
@@ -20,12 +22,13 @@ import * as path from 'path';
       driver: ApolloDriver,
       autoSchemaFile: true,
       introspection: true,  
+      context: ({ req }) => ({ req }), 
     }),
     ConfigModule.forRoot({
       isGlobal: true,
     }),
     ServeStaticModule.forRoot({
-      rootPath: path.join(process.cwd(), '/src/uploadFile'), // Ajuste conforme necessário
+      rootPath: path.join(process.cwd(), '/src/uploadFile'), 
       serveRoot: '/uploadFile',
     }),
     TypeOrmModule.forRoot({
@@ -36,10 +39,10 @@ import * as path from 'path';
     }),
     UsersModule,
     ProductsModule,
-    AuthModule, 
+    AuthModule,   
     VendasModule, 
     UploudsModule,
   ],
-
+  providers: [AuthResolver, AuthService],
 })
 export class AppModule {}

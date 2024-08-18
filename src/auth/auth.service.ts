@@ -11,9 +11,16 @@ export class AuthService {
 
   async SignIn(createAuthInput: CreateAuthInput) {
     const foundUser =  await this.usersService.findOneByEmail(createAuthInput.email);
-    if (foundUser?.password !== createAuthInput.password) {
+
+    const verifyLogin =  await this.usersService.validateUserPassWord(foundUser, createAuthInput.password)
+
+    console.log(foundUser)
+    console.log(verifyLogin)
+
+    if (!verifyLogin ) {
       throw new UnauthorizedException();
     }
+
     const payload = { email: foundUser.email }
     const acess_Token = await this.jwtService.signAsync(payload)
     return {

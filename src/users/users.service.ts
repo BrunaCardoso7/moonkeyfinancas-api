@@ -4,7 +4,7 @@ import { UpdateUserInput } from './dto/update-user.input';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
-
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsersService {
@@ -14,7 +14,13 @@ export class UsersService {
   ) {}
 
   async create(createUserInput: CreateUserInput) {
-    return await this.userRepository.save(createUserInput);
+    const hashPass = await bcrypt.hash(createUserInput.password, 10)
+    const user = this.userRepository.create( {
+      ...createUserInput,
+      password: hashPass
+    })
+
+    return await this.userRepository.save(user);
   }
 
   async findAll() {
@@ -34,12 +40,22 @@ export class UsersService {
       id,
       ...updateUserInput,
     });
+    
+    if(updateUserInput.password) {
+      const hashPass = await bcrypt.hash(updateUserInput.password, 10)
+      updateUserInput.password = hashPass
+    }
 
     if (!user) {
       throw new Error('Usuário não encontrado');
     }
 
     return await this.userRepository.save(user);;
+  }
+
+  async validateUserPassWord (user: User, password: string) {
+
+    return await bcrypt.compare(password, user.password)
   }
 
   remove(id: string) {
