@@ -43,7 +43,7 @@ API GraphQl desenvolvida com Nest.js, tem como proposta gestão de vendas e pedi
 
 
 - [x] Implementar module para uploud de arquivos
-  - [ ] testar a rota de uplouds no cliente 
+  - [x] testar a rota de uplouds no cliente 
 
 - [ ] Implementar cacheamento de dados nos modules
 
