@@ -16,6 +16,7 @@ import * as path from 'path';
 import { AuthResolver } from './auth/auth.resolver';
 import { AuthService } from './auth/auth.service';
 
+
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
