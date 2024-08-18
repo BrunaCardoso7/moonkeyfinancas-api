@@ -33,11 +33,11 @@ export class User {
   imagemProfile?: string;
 
   @Field(() => [Product], { nullable: true })
-  @OneToMany(() => Product, (product) => product.users)
+  @OneToMany(() => Product, (product) => product.user)
   products?: Product[];
 
-  // @Field({nullable: true})
-  // @Column({nullable: true})
-  // @OneToMany(() => Venda, (venda) => venda.users)
-  // vendas: Venda[]
+
+  @Field(() => [Venda], { nullable: true })
+  @OneToMany(() => Venda, (venda) => venda.user)
+  vendas?: Venda[]
 }

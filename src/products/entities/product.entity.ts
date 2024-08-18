@@ -38,12 +38,12 @@ export class Product {
   @Field()
   userId: string;
 
-  @Field(() => [Venda])
+  @Field(() => [Venda], {nullable: true})
   @ManyToMany(() => Venda, (venda) => venda.products)
-  vendas: Venda[];
+  vendas?: Venda[];
 
   @ManyToOne(() => User, (user) => user.products)
-  @Field(() => User)
+  @Field(() => User, {nullable: true})
   @JoinColumn({ name: 'userId' })
-  users: User;
+  user?: User;
 }

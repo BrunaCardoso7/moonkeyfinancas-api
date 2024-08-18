@@ -27,8 +27,13 @@ export class UsersService {
     return await this.userRepository.find();
   }
 
-  async findOne(id: string) {
+  async findProductsByUsers(id: string) {
     return await this.userRepository.findOne({where: { id }, relations: ['products']});
+  }
+
+
+  async findVendasByUsers(id: string) {
+    return await this.userRepository.findOne({where: { id }, relations: ['vendas']});
   }
 
   async findOneByEmail(email: string) {

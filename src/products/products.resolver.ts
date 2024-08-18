@@ -14,7 +14,6 @@ export class ProductsResolver {
   @Mutation(() => Product, {name: 'createProduct',description: 'cria um novo produto'})
   createProduct(@Args('createProductInput') createProductInput: CreateProductInput, @Context() context: any) {
     const userId = context.req.user?.id
-    console.log(userId)
     if(userId) {
       createProductInput.userId = userId
     }

@@ -16,7 +16,7 @@ export class VendasService {
   ) {}
 
   async create(createVendaInput: CreateVendaInput) {
-    createVendaInput.data_venda = new Date
+    createVendaInput.data_venda = new Date()
 
     const {productsIds} = createVendaInput
 
@@ -39,10 +39,17 @@ export class VendasService {
     return await this.vendaRepository.find();
   }
 
-  async findOne(id: string) {
+  async findProductsByVendas(id: string) {
     return await this.vendaRepository.findOne({
       where: {id}, 
       relations: ['products']
+    });
+  }
+
+  async findVendasByUser(id: string) {
+    return await this.vendaRepository.findOne({
+      where: {id}, 
+      relations: ['users']
     });
   }
 

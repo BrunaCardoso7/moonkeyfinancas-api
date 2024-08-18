@@ -7,10 +7,10 @@ import { AuthGuard } from 'src/auth/auth.guard';
 @Module({
   providers: [
     UploadsService,
-    {
-      provide: APP_GUARD,
-      useClass: AuthGuard,
-    },
+    // {
+    //   provide: APP_GUARD,
+    //   useClass: AuthGuard,
+    // },
   ],
   controllers: [UploudsController],
 })

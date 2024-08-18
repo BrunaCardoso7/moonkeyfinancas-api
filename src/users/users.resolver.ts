@@ -1,9 +1,9 @@
-import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args, Context } from '@nestjs/graphql';
 import { UsersService } from './users.service';
 import { User } from './entities/user.entity';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
-import { UseGuards } from '@nestjs/common';
+import { UnauthorizedException, UseGuards } from '@nestjs/common';
 import { AuthGuard } from 'src/auth/auth.guard';
 
 @Resolver(() => User)
@@ -22,20 +22,43 @@ export class UsersResolver {
   }
 
   @UseGuards(AuthGuard)
-  @Query(() => User, { name: 'findUserById', description: "lista usuário pelo id" })
-  findOne(@Args('id', { type: () => String }) id: string) {
-    return this.usersService.findOne(id);
+  @Query(() => User, { name: 'findProductsByUsers', description: "lista produtos pelo id do usuário" })
+  findProductsByUsers(@Context() context: any) {
+    const userId = context.req.user?.id
+    if (!userId) {
+      throw new UnauthorizedException("id do usuário não foi fornecida")
+    }
+    return this.usersService.findProductsByUsers(userId);
+  }
+
+  @UseGuards(AuthGuard)
+  @Query(() => User, { name: 'findVendasByUsers', description: "lista vendas pelo id do usuário" })
+  findVendasByUsers(@Context() context: any) {
+    const userId = context.req.user?.id
+    if(!userId) {
+      throw new UnauthorizedException("id do usuário não foi fornecida")
+    }
+    return this.usersService.findVendasByUsers(userId);
   }
 
   @UseGuards(AuthGuard)
   @Mutation(() => User, { name: 'updateUserById', description: "atualiza usuário pelo id" })
-  updateUser(@Args('updateUserInput') updateUserInput: UpdateUserInput) {
-    return this.usersService.update(updateUserInput.id, updateUserInput);
+  updateUser(@Args('updateUserInput') updateUserInput: UpdateUserInput, @Context() context: any) {
+    const userId = context.req.user?.id
+    console.log(userId)
+    if(!userId) {
+      throw new UnauthorizedException("id do usuário não foi fornecida")
+    }
+    return this.usersService.update(userId, updateUserInput);
   }
 
   @UseGuards(AuthGuard)
   @Mutation(() => User,{ name: 'deleteUserById', description: "remove usuário pelo id" })
-  removeUser(@Args('id', { type: () => String }) id: string) {
-    return this.usersService.remove(id);
+  removeUser(@Context() context: any) {
+    const userId = context.req.user?.id 
+    if(!userId) {
+      throw new UnauthorizedException("id do usuário não foi fornecida")
+    }
+    return this.usersService.remove(userId);
   }
 }

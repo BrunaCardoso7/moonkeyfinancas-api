@@ -11,5 +11,6 @@
     @Field(() => [String], { nullable: true })
     productsIds?: string[];
 
-    
+    @Field(() => [String], { nullable: true })
+    userId?: string;
   }

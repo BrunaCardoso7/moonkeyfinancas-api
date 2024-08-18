@@ -33,7 +33,7 @@ import { AuthService } from './auth/auth.service';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: 'postgresql://postgres:FgmBkNNuCkykHXFleyialUYrWyJogvXp@junction.proxy.rlwy.net:19983/railway',
+      url: 'postgresql://postgres:PqCKNfnFinhPvhLZskGndxUyYCmDzFet@junction.proxy.rlwy.net:43244/railway',
       entities: [User, Product, Venda],
       synchronize: true,
     }),

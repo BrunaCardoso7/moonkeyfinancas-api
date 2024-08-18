@@ -15,10 +15,10 @@ import { AuthGuard } from 'src/auth/auth.guard';
   providers: [
     ProductsResolver, 
     ProductsService,
-    {
-      provide: APP_GUARD,
-      useClass: AuthGuard,
-    },
+    // {
+    //   provide: APP_GUARD,
+    //   useClass: AuthGuard,
+    // },
   ],
 })
 export class ProductsModule {}
