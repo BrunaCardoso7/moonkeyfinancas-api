@@ -20,4 +20,5 @@ export class UpdateUserInput extends PartialType(CreateUserInput) {
 
   @Field({nullable: true})
   imagemProfile?: string;
+
 }

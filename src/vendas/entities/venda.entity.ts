@@ -1,6 +1,7 @@
   import { ObjectType, Field, Int } from '@nestjs/graphql';
   import { Product } from 'src/products/entities/product.entity';
-  import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from 'src/users/entities/user.entity';
+  import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
   @ObjectType()
   @Entity({name: 'vendas'})
@@ -17,4 +18,9 @@
     @ManyToMany(()=>Product, (product) => product.vendas)
     @JoinTable()
     products: Product[]
+    
+    // @Field({nullable: true})
+    // @Column({nullable: true})
+    // @ManyToOne(() => User, (user) => user.vendas)
+    // users: User
   }

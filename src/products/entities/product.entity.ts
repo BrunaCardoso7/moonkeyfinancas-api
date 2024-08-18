@@ -1,9 +1,10 @@
 import { ObjectType, Field } from '@nestjs/graphql';
+import { User } from 'src/users/entities/user.entity';
 import { Venda } from 'src/vendas/entities/venda.entity';
-import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @ObjectType()
-@Entity({name: 'products'})
+@Entity({ name: 'products' })
 export class Product {
   @PrimaryGeneratedColumn('uuid')
   @Field()
@@ -11,29 +12,38 @@ export class Product {
 
   @Field()
   @Column()
-  produto: string
+  produto: string;
 
   @Field()
   @Column()
-  categoria: string
+  categoria: string;
 
   @Field()
   @Column()
-  subCategoria: string
+  subCategoria: string;
 
   @Field()
   @Column()
-  quantidade: number
+  quantidade: number;
 
   @Field()
   @Column()
-  valor: number
+  valor: number;
 
-  @Field({nullable: true})
-  @Column({nullable: true})
+  @Field({ nullable: true })
+  @Column({ nullable: true })
   imagemProduct?: string;
 
-  @Field(()=> [Venda])
-  @ManyToMany(()=> Venda, (venda) => venda.products)
-  vendas: Venda[]
+  @Column()
+  @Field()
+  userId: string;
+
+  @Field(() => [Venda])
+  @ManyToMany(() => Venda, (venda) => venda.products)
+  vendas: Venda[];
+
+  @ManyToOne(() => User, (user) => user.products)
+  @Field(() => User)
+  @JoinColumn({ name: 'userId' })
+  users: User;
 }

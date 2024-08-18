@@ -15,13 +15,13 @@ export class UsersResolver {
     return this.usersService.create(createUserInput);
   }
 
-  // @UseGuards(AuthGuard)
+  @UseGuards(AuthGuard)
   @Query(() => [User], { name: 'findAllUsers', description: "lista todos os usuários"})
   findAll() {
     return this.usersService.findAll();
   }
 
-  // @UseGuards(AuthGuard)
+  @UseGuards(AuthGuard)
   @Query(() => User, { name: 'findUserById', description: "lista usuário pelo id" })
   findOne(@Args('id', { type: () => String }) id: string) {
     return this.usersService.findOne(id);
@@ -33,7 +33,7 @@ export class UsersResolver {
     return this.usersService.update(updateUserInput.id, updateUserInput);
   }
 
-  // @UseGuards(AuthGuard)
+  @UseGuards(AuthGuard)
   @Mutation(() => User,{ name: 'deleteUserById', description: "remove usuário pelo id" })
   removeUser(@Args('id', { type: () => String }) id: string) {
     return this.usersService.remove(id);

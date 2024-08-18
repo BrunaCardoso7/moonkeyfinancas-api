@@ -17,8 +17,11 @@ export class VendasService {
 
   async create(createVendaInput: CreateVendaInput) {
     createVendaInput.data_venda = new Date
+
     const {productsIds} = createVendaInput
+
     let products = []
+    
     if (productsIds && productsIds.length > 0) {
         products = await this.productRepository.findBy({
           id: In(productsIds)

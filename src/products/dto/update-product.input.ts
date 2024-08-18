@@ -17,4 +17,6 @@ export class UpdateProductInput extends PartialType(CreateProductInput) {
   valor?: number;
   @Field({nullable: true})
   imagemProfile?: string;
+  @Field({nullable: true})
+  userId?: string;
 }

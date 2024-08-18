@@ -17,10 +17,10 @@ import { AuthGuard } from 'src/auth/auth.guard';
   providers: [
     VendasResolver, 
     VendasService,
-    // {
-    //   provide: APP_GUARD,
-    //   useClass: AuthGuard,
-    // },
+    {
+      provide: APP_GUARD,
+      useClass: AuthGuard,
+    },
   ],
 })
 export class VendasModule {}

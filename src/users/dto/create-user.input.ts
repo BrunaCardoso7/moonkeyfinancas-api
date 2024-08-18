@@ -18,4 +18,5 @@ export class CreateUserInput {
   
   @Field({nullable: true})
   imagemProfile?: string;
+
 }

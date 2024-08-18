@@ -1,5 +1,7 @@
 import { ObjectType, Field } from '@nestjs/graphql';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Product } from 'src/products/entities/product.entity';
+import { Venda } from 'src/vendas/entities/venda.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 
 @ObjectType()
@@ -29,4 +31,13 @@ export class User {
   @Field({nullable: true})
   @Column({nullable: true})
   imagemProfile?: string;
+
+  @Field(() => [Product], { nullable: true })
+  @OneToMany(() => Product, (product) => product.users)
+  products?: Product[];
+
+  // @Field({nullable: true})
+  // @Column({nullable: true})
+  // @OneToMany(() => Venda, (venda) => venda.users)
+  // vendas: Venda[]
 }
