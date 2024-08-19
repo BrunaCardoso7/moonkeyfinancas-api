@@ -46,7 +46,7 @@ API GraphQl desenvolvida com Nest.js, tem como proposta gestão de vendas e pedi
   - [x] testar a rota de uplouds no cliente 
 
 - [x] Implementar cache de Querys no GraphQL
-  - [ ] ditribuir nas Querys do projeto o serviço de cache
+  - [x] ditribuir nas Querys do projeto o serviço de cache
 
 - [ ] Tratamento de erros Filter
 
