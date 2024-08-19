@@ -1,7 +1,8 @@
 
 
 <p align="center">
-  <h1 align="center">Moonkey Finanças API</h1>
+  <a href="" target="blank"><img src="./public/moonkey_ui/Frame 3.png" width="800" alt="Nest Logo" /></a>
+  <h1 align="center">API de gestão de vendas</h1>
   <p align="center">
   <a href="" target="blank"><img src="./public/1.png" width="800" alt="Nest Logo" /></a>
   </p>
