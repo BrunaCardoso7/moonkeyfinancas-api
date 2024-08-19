@@ -7,12 +7,14 @@ import { ProductsModule } from 'src/products/products.module';
 import { Product } from 'src/products/entities/product.entity';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from 'src/auth/auth.guard';
+import { RedisModule } from 'src/config/redis-config.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([Venda]),  
     TypeOrmModule.forFeature([Product]),
-    ProductsModule
+    ProductsModule,
+    RedisModule
   ],
   providers: [
     VendasResolver, 

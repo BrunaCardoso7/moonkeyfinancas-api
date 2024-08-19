@@ -6,11 +6,13 @@ import { Product } from './entities/product.entity';
 import { User } from 'src/users/entities/user.entity';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from 'src/auth/auth.guard';
+import { RedisModule } from 'src/config/redis-config.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([Product]),
     TypeOrmModule.forFeature([User]),
+    RedisModule
   ],
   providers: [
     ProductsResolver, 

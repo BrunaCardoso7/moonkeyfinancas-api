@@ -8,7 +8,7 @@ import { RedisModule } from 'src/config/redis-config.module';
 @Module({
   imports: [ 
     TypeOrmModule.forFeature([User]),
-    RedisModule
+    RedisModule, 
   ],
   providers: [
     UsersResolver, 
