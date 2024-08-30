@@ -21,7 +21,7 @@ export class UsersResolver {
     return this.usersService.create(createUserInput);
   }
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Query(() => [User], { name: 'findAllUsers', description: "lista todos os usuários"})
   findAll() {
     return this.usersService.findAll();
